@@ -1,4 +1,4 @@
-package com.turkcell.order_service.order_service;
+package com.turkcell.order_service;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
