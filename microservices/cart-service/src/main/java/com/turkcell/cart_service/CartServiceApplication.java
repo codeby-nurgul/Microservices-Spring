@@ -1,4 +1,4 @@
-package com.turkcell.cart_service.cart_service;
+package com.turkcell.cart_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
