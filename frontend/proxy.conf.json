@@ -1,0 +1,22 @@
+{
+  "/api": {
+    "target": "http://localhost:9000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/oauth2": {
+    "target": "http://localhost:9000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/login": {
+    "target": "http://localhost:9000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/logout": {
+    "target": "http://localhost:9000",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

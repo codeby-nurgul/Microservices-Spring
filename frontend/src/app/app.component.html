@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>BFF Test Angular Uygulaması</h1>
+  
+  <div class="actions">
+    <button (click)="login()" class="btn btn-primary">Login (Keycloak)</button>
+    <button (click)="logout()" class="btn btn-secondary">Logout</button>
+    <button (click)="fetchProducts()" class="btn btn-success">Ürünleri Getir</button>
+  </div>
+
+  <div class="result-area">
+    <div *ngIf="errorMsg" class="error-box">
+      {{ errorMsg }}
+    </div>
+    
+    <div *ngIf="productsData" class="success-box">
+      <h3>Sunucudan Gelen Cevap:</h3>
+      <pre>{{ productsData }}</pre>
+    </div>
+  </div>
+</div>
