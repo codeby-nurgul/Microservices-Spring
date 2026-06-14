@@ -2,15 +2,13 @@
 spring:
     application:
         name: config-server
+    profiles:
+        active: native
     cloud:
         config:
             server:
-                git: 
-                    uri: https://github.com/codeby-nurgul/Microservices-Spring.git
-                    default-label: main
-                    search-paths:  microservices/configs,microservices/configs/{application}
-                    clone-on-start: true
-                    force-pull: true
+                native: 
+                    search-locations: file:///C:/Microservices-Spring/microservices/configs,file:///C:/Microservices-Spring/microservices/configs/{application}
                 
 server:
     port: 8888
