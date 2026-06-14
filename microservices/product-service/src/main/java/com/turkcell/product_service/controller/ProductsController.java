@@ -26,7 +26,7 @@ public class ProductsController {
         this.objectMapper = objectMapper;
     }
 
-    @GetMapping()
+    @GetMapping("/hello")
     public String hello() {
         return "Hello";
     }
