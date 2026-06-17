@@ -5,5 +5,8 @@ spring:
     active: dev
   config:
     import: "optional:configserver:http://localhost:8888"
+  data:
+    redis:
+      port: 6380
 server:
   port: 8082

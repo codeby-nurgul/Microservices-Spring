@@ -12,16 +12,18 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableMethodSecurity // TODO: Konuşulacak.
 public class SecurityConfig {
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(
-                auth -> auth.requestMatchers("/actuator/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        .anyRequest().authenticated())
-                .oauth2ResourceServer(
-                        oauth2 -> oauth2.jwt(Customizer.withDefaults()))
-                .csrf(AbstractHttpConfigurer::disable) // session yok, cookie yok bu yüzden csrf'yi devre dışı
-                                                       // bırakıyoruz.
-                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-        return http.build();
-    }
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+                http.authorizeHttpRequests(
+                                auth -> auth.requestMatchers("/actuator/**", "/swagger-ui/**", "/v3/api-docs/**")
+                                                .permitAll()
+                                                .anyRequest().permitAll())
+                                .oauth2ResourceServer(
+                                                oauth2 -> oauth2.jwt(Customizer.withDefaults()))
+                                .csrf(AbstractHttpConfigurer::disable) // session yok, cookie yok bu yüzden csrf'yi
+                                                                       // devre dışı
+                                                                       // bırakıyoruz.
+                                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                return http.build();
+        }
 }
